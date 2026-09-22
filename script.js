@@ -105,10 +105,42 @@ function calcularpromedio(event){
     if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
         console.log("Datos mal registrados")
         resultado.textContent = "Error, favor de ingresar correctamente los datos";
+        resultado.className = "text-danger";
         return;
     }
 
-    const promedio = (n1, n2, n3) / 3;
+    if ((n1 > 100) || (n1 < 0)){
+        console.log("Dato mal registrado p1")
+        resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
+        resultado.className = "text-danger";
+        return;
+    }
+    else if ((n2 > 100) || (n2 < 0)){
+        console.log("Dato mal registrado p2")
+        resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
+        resultado.className = "text-danger";
+        return;
+    }
+    else if ((n3 > 100) || (n3 < 0)){
+        console.log("Dato mal registrado p2")
+        resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
+        resultado.className = "text-danger";
+        return;
+    }
 
+
+    console.log("Validaciones pasadas")
+    const promedio = (n1 + n2 + n3) / 3;
+
+    const promediofixed = promedio.toFixed(2);
+
+    if (promedio >= 70){
+        resultado.textContent = `Promedio = ${promediofixed} - Aprovado`;
+        resultado.className = "text-success";
+    }
+    else{
+        resultado.textContent = `Promedio = ${promediofixed} - Reprovado`;
+        resultado.className = "text-danger";
+    }
 }
 
