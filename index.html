@@ -54,8 +54,20 @@
 
 
         <!-- Calculadora -->
-        <div class="m-10" id="calculadora">
-            <p>a</p>
+        <div class="m-10 text-light" id="calculadora">
+            <h1 class="text-center">Calculadora de promedio</h1>
+            <form onsubmit="calcularpromedio(event)">
+                <label for="parcial" >Parcial 1</label>
+                <input type="text" id="parcial1" required>
+
+                <label for="parcial2">Parcial 2</label>
+                <input type="text" id="parcial1" required>
+
+                <label for="parcial3">Parcial 3</label>
+                <input type="text" id="parcial1" required>
+                <button type="submit">Calcular</button>
+            </form>
+            <p id="resultadopromedio"></p>
         </div>
 
         <div class="m-10" id="lista">

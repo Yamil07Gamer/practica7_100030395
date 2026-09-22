@@ -85,5 +85,30 @@ function limpiardatos(){
 
 // ejercicio de Calculadora
 
+function calcularpromedio(event){
+    event.preventDefault();
 
+    const p1 = document.getElementById("parcial1").value;
+    const p2 = document.getElementById("parcial2").value;
+    const p3 = document.getElementById("parcial3").value;
+
+    console.log("Valores capturados inicando secuencia de transformacion");
+
+    const n1 = parseFloat(p1);
+    const n2 = parseFloat(p2);
+    const n3 = parseFloat(p3);
+
+    const resultado = document.getElementById("resultadopromedio");
+
+    // validaciones
+
+    if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
+        console.log("Datos mal registrados")
+        resultado.textContent = "Error, favor de ingresar correctamente los datos";
+        return;
+    }
+
+    const promedio = (n1, n2, n3) / 3;
+
+}
 
