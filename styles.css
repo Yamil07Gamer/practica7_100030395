@@ -1,3 +1,9 @@
 main{
     margin-top: 5rem;
 }
+
+#resultados{
+    padding: 1rem 0.2rem;
+    width: auto;
+    height: 3.5rem;
+}
