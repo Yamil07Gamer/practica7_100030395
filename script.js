@@ -27,6 +27,7 @@ function desplegardatos1(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
+    agregarElemento();
 }
 
 function desplegardatos2(){
@@ -51,6 +52,7 @@ function desplegardatos2(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
+    agregarElemento();
 }
 
 function desplegardatos3(){
@@ -75,6 +77,7 @@ function desplegardatos3(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
+    agregarElemento();
 }
 
 function limpiardatos(){
@@ -82,6 +85,7 @@ function limpiardatos(){
     parrafo.textContent = ``;
     clicksecciona = false;
     console.log("Datos limpiados");
+    limparelemento();
 }
 
 // ejercicio de Calculadora
@@ -225,24 +229,6 @@ document.addEventListener('click', function playAudio(){
     document.removeEventListener('click', playAudio);
 }, {once:true});
 
-document.querySelectorAll('#valores').forEach(boton => { //aqui se pone el id o clase del elemento que sonara
-        boton.addEventListener('click', () => {
-            const audioClick = document.getElementById('sonido_click'); //aqui el id del audio en el html
-            audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
-            audioClick.volume = 0.3;    // Volumen del clic
-            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente") && agregarElemento());
-        });
-    });
-
-document.querySelectorAll('#limpiar').forEach(boton => { //aqui se pone el id o clase del elemento que sonara
-        boton.addEventListener('click', () => {
-            const audioClick = document.getElementById('sonido_click2'); //aqui el id del audio en el html
-            audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
-            audioClick.volume = 0.3;    // Volumen del clic
-            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente") && agregarElemento());
-        });
-    });
-
 function aprovo(){
     const audio = document.getElementById("aprov_sonido");
     audio.currentTime = 0;
@@ -272,7 +258,14 @@ function alerta(){
 }
 
 function agregarelemento(){
-    const audio = document.getElementById("nuevoelemento");
+    const audio = document.getElementById("sonido_click");
+    audio.currentTime = 0;
+    audio.volume = 0.3;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
+
+function limparelemento(){
+    const audio = document.getElementById("sonido_click2");
     audio.currentTime = 0;
     audio.volume = 0.3;
     audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
