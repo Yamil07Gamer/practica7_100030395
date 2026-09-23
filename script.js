@@ -215,6 +215,8 @@ function originalbg(){
 
 //fuciones basuras XDXD
 
+
+
 document.addEventListener('click', function playAudio(){
     const audio = document.getElementById('musicafondo');
     audio.volume = 0.2;
@@ -228,7 +230,7 @@ document.querySelectorAll('#valores').forEach(boton => { //aqui se pone el id o 
             const audioClick = document.getElementById('sonido_click'); //aqui el id del audio en el html
             audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
             audioClick.volume = 0.3;    // Volumen del clic
-            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente") && agregarElemento());
         });
     });
 
@@ -237,7 +239,7 @@ document.querySelectorAll('#limpiar').forEach(boton => { //aqui se pone el id o 
             const audioClick = document.getElementById('sonido_click2'); //aqui el id del audio en el html
             audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
             audioClick.volume = 0.3;    // Volumen del clic
-            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente") && agregarElemento());
         });
     });
 
