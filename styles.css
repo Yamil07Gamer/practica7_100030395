@@ -7,3 +7,28 @@ main{
     width: auto;
     height: 3.5rem;
 }
+
+button{
+    background-color: var(--bs-link-color);
+    border-color: var(--bs-link-hover-color);
+    color: var(--bs-light);
+}
+
+button:active{
+    background-color: var(--bs-link-hover-color);
+    color: var(--bs-light);
+}
+
+#cambio, #lista, #calcuadora, #varaibles_salida{
+    margin: 2rem 0rem;
+}
+
+#vd{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

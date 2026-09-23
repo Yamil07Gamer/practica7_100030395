@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="imagenes/icon/favicon.ico">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Práctica 7</title>
 </head>
 <body class="bg-dark">
@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
             <div class="container-fluid">
-                <p class="navbar-brand">HOla que hace</p>
+                <p class="navbar-brand">Ola k ase</p>
             
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav">
@@ -43,7 +43,7 @@
         <!-- Variables de salida -->
         <div class="mt-20" id="variables_salida">
             <h1 class="text-center text-light">Varaibles de salida ejercicio</h1>
-            <div class="container-xl">
+            <div class="container-xl" id="vd">
                 <button onclick="desplegardatos1()"> Presione para ver los datos de Yamil</button>
                 <button onclick="desplegardatos2()"> Presione para ver los datos de Miranda</button>
                 <button onclick="desplegardatos3()"> Presione para ver los datos de alfredo</button>
@@ -51,7 +51,7 @@
             </div>
             <p id="resultados" class="text-dark bg-info"></p>
         </div>
-
+        <audio src="" id="sonido_click"></audio> //sonido radom
 
         <!-- Calculadora -->
         <div class="m-10 text-light" id="calculadora">
@@ -69,18 +69,26 @@
             </form>
             <p id="resultadopromedio"></p>
         </div>
+        <audio src="" id="aprov_sonido"></audio> //sonido de celebracion
+        <audio src="" id="reprov_sonido"></audio> //sonido de decepcion
+
 
         <div class="m-10" id="lista">
-            <p>a</p>
+            <h1 class="text-center text-light">Lista dinamica</h1>
+            <button onclick="agregarElemento()">Agregar elemento</button>
+            <input type="text" placeholder="Ingrese su texto" id="inputtext">
+            <button onclick="limpiarElemento()">Eliminar elementos</button>
+            <ul id="listadinamica">
+            </ul>
         </div>
 
         <div class="m-10" id="cambio">
-            <p>a</p>
+            <h1 class="text-center text-light">Cambios de estilos</h1>
+            <button onclick="cambiarbg()">Cambiar background</button>
+            <button onclick="originalbg()">Regresar al original</button>
         </div>
     </main>
-
-
-
+    <audio src="" id="flashbang"></audio> //al cambiar el color al bg a blanco XD
 
 
     <footer class="bg-black" id="fin">
@@ -107,12 +115,14 @@
                 <div class="col-12 col-md-4 text-md-end text-light">
                     <h5>Información adicional</h5>
                     <p class="mb-1">Wazaaaa</p>
+                    <p class="mb-1">Musica: Attack of the Killer Queen por TobyFox</p>
                 </div>
 
             </div>
         </div>
     </footer>
 
+    <audio src="sounds/song/32. Attack of the Killer Queen.m4a" id="musicafondo"></audio>
 
     <script src="bootstrap/bootstrap.js"></script>
     <script src="script.js"></script>

@@ -81,6 +81,7 @@ function limpiardatos(){
     const parrafo = document.getElementById("resultados");
     parrafo.textContent = ``;
     clicksecciona = false;
+    console.log("Datos limpiados");
 }
 
 // ejercicio de Calculadora
@@ -128,7 +129,6 @@ function calcularpromedio(event){
         return;
     }
 
-
     console.log("Validaciones pasadas")
     const promedio = (n1 + n2 + n3) / 3;
     const promediofixed = promedio.toFixed(2);
@@ -143,3 +143,70 @@ function calcularpromedio(event){
     }
 }
 
+// lista dinamica 
+
+function agregarElemento() {
+    const dato = document.getElementById("inputtext").value;
+    const lista = document.getElementById("listadinamica");
+    const nuevoElemto = document.createElement("li");
+
+    nuevoElemto.className = "text-light";
+
+    if (dato.trim() == ""){
+        console.log("Dato vacio");
+        window.alert("Ingrese algo en el cuadro de texto") //me lo fume y si funciono la sintaxis XDXD
+        return;
+    }
+
+    nuevoElemto.textContent = dato;
+    lista.appendChild(nuevoElemto);
+
+    document.getElementById("inputtext").value = "";
+}
+
+function limpiarElemento() {
+    console.log("Vaciando lista")
+    document.getElementById("listadinamica").innerHTML = "";
+}
+
+// cambio de estilos
+
+function cambiarbg(){
+    const bg = document.querySelector("body");
+    console.log("Intentando cambiar el bg a blanco");
+
+    if (bg.className.trim() == "bg-light"){
+        console.log("Nada que hacer");
+        window.alert("El color ya a sido cambiado");
+        return;
+    }
+    else{
+        bg.className=("bg-light");
+        return;
+    }
+}
+
+function originalbg(){
+    const bg = document.querySelector("body");
+    console.log("Intentando regresar el bg original");
+
+    if (bg.className.trim() == "bg-dark"){
+        console.log("Nada que hacer");
+        window.alert("El color ya a sido cambiado al original");
+        return;
+    }
+    else{
+        bg.className=("bg-dark");
+        return;
+    }
+}
+
+//fuciones basuras XDXD
+
+document.addEventListener('click', function playAudio(){
+    const audio = document.getElementById('musicafondo');
+    audio.volume = 0.2;
+    audio.play();
+
+    document.removeEventListener('click', playAudio);
+}, {once:true});
