@@ -85,7 +85,7 @@ function limpiardatos(){
     parrafo.textContent = ``;
     clicksecciona = false;
     console.log("Datos limpiados");
-    limparelemento();
+    limparelementosound();
 }
 
 // ejercicio de Calculadora
@@ -173,13 +173,13 @@ function agregarElemento() {
     lista.appendChild(nuevoElemto);
 
     document.getElementById("inputtext").value = "";
-    agregarelemento();
+    agregarelementosound();
 }
 
 function limpiarElemento() {
     console.log("Vaciando lista")
     document.getElementById("listadinamica").innerHTML = "";
-    agregarelemento();
+    limparelementosound();
 }
 
 // cambio de estilos
@@ -225,7 +225,7 @@ function otrobg(){
     if (bg.className.trim() == "bg-info"){
         console.log("Nada que hacer");
         alerta();
-        window.alert("El color ya a sido cambiado al original");
+        window.alert("El color ya a sido cambiado");
         return;
     }
     else{
@@ -283,7 +283,7 @@ function agregarelementosound(){
     audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
 }
 
-function limparelemento(){
+function limparelementosound(){
     const audio = document.getElementById("sonido_click2");
     audio.currentTime = 0;
     audio.volume = 0.3;
