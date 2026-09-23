@@ -27,7 +27,7 @@ function desplegardatos1(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
-    agregarElemento();
+    agregarelementosound();
 }
 
 function desplegardatos2(){
@@ -52,7 +52,7 @@ function desplegardatos2(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
-    agregarElemento();
+    agregarelementosound();
 }
 
 function desplegardatos3(){
@@ -77,7 +77,7 @@ function desplegardatos3(){
         parrafo.textContent = ``;
         clicksecciona = false;
     }
-    agregarElemento();
+    agregarelementosound();
 }
 
 function limpiardatos(){
@@ -257,7 +257,7 @@ function alerta(){
     audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
 }
 
-function agregarelemento(){
+function agregarelementosound(){
     const audio = document.getElementById("sonido_click");
     audio.currentTime = 0;
     audio.volume = 0.3;
