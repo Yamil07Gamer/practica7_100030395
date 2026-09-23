@@ -1,4 +1,4 @@
-# Práctica 6
+# Práctica 7
 
 Practica6_100030395
 
