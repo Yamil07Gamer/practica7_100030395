@@ -213,8 +213,27 @@ function originalbg(){
     }
     else{
         bg.className=("bg-dark");
+        agregarelementosound();
         return;
     }
+}
+
+function otrobg(){
+    const bg = document.querySelector("body");
+    console.log("Intentando regresar el bg original");
+    
+    if (bg.className.trim() == "bg-info"){
+        console.log("Nada que hacer");
+        alerta();
+        window.alert("El color ya a sido cambiado al original");
+        return;
+    }
+    else{
+        bg.className=("bg-info");
+        agregarelementosound();
+        return;
+    }
+    
 }
 
 //fuciones basuras XDXD
@@ -246,7 +265,7 @@ function reprovo(){
 function fb(){
     const audio = document.getElementById("flashbang");
     audio.currentTime = 0;
-    audio.volume = 0.5;
+    audio.volume = 0.1;
     audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
 }
 
