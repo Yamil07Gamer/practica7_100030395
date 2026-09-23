@@ -44,14 +44,15 @@
         <div class="mt-20" id="variables_salida">
             <h1 class="text-center text-light">Varaibles de salida ejercicio</h1>
             <div class="container-xl" id="vd">
-                <button onclick="desplegardatos1()"> Presione para ver los datos de Yamil</button>
-                <button onclick="desplegardatos2()"> Presione para ver los datos de Miranda</button>
-                <button onclick="desplegardatos3()"> Presione para ver los datos de alfredo</button>
-                <button onclick="limpiardatos()">Limpiar</button>
+                <button onclick="desplegardatos1()" id="valores"> Presione para ver los datos de Yamil</button>
+                <button onclick="desplegardatos2()" id="valores"> Presione para ver los datos de Miranda</button>
+                <button onclick="desplegardatos3()" id="valores"> Presione para ver los datos de alfredo</button>
+                <button onclick="limpiardatos()" id="limpiar">Limpiar</button>
             </div>
             <p id="resultados" class="text-dark bg-info"></p>
         </div>
-        <audio src="" id="sonido_click"></audio> //sonido radom
+        <audio src="/sounds/clicks/l4d2 click.mp3" id="sonido_click"></audio> //sonido radom
+        <audio src="/sounds/clicks/l4d2 click2.mp3" id="sonido_click2"></audio>
 
         <!-- Calculadora -->
         <div class="m-10 text-light" id="calculadora">
@@ -69,8 +70,8 @@
             </form>
             <p id="resultadopromedio"></p>
         </div>
-        <audio src="" id="aprov_sonido"></audio> //sonido de celebracion
-        <audio src="" id="reprov_sonido"></audio> //sonido de decepcion
+        <audio src="sounds/others/Gato Ohhh (128kbit_AAC).mp3" id="aprov_sonido"></audio> //sonido de celebracion
+        <audio src="sounds/others/FAAHHH Sound Effect (128kbit_AAC).mp3" id="reprov_sonido"></audio> //sonido de decepcion
 
 
         <div class="m-10" id="lista">
@@ -88,7 +89,7 @@
             <button onclick="originalbg()">Regresar al original</button>
         </div>
     </main>
-    <audio src="" id="flashbang"></audio> //al cambiar el color al bg a blanco XD
+    <audio src="sounds/others/fb.mp3" id="flashbang"></audio> <!--al cambiar el color al bg a blanco XD-->
 
 
     <footer class="bg-black" id="fin">
@@ -114,8 +115,8 @@
                 <!-- Columna derecha: datos adicionales -->
                 <div class="col-12 col-md-4 text-md-end text-light">
                     <h5>Información adicional</h5>
-                    <p class="mb-1">Wazaaaa</p>
                     <p class="mb-1">Musica: Attack of the Killer Queen por TobyFox</p>
+                    <p class="mb-1">Otros sonidos: Por VALVe</p>
                 </div>
 
             </div>
@@ -123,6 +124,8 @@
     </footer>
 
     <audio src="sounds/song/32. Attack of the Killer Queen.m4a" id="musicafondo"></audio>
+    <audio src="sounds/others/Metal Gear Solid; Alert (!) (128kbit_AAC).mp3" id="alerta"></audio>
+    <audio src="sounds/clicks/l4d2 click.mp3" id="nuevoelemento"></audio>
 
     <script src="bootstrap/bootstrap.js"></script>
     <script src="script.js"></script>

@@ -105,6 +105,7 @@ function calcularpromedio(event){
 
     if(isNaN(n1) || isNaN(n2) || isNaN(n3)){
         console.log("Datos mal registrados")
+        alerta();
         resultado.textContent = "Error, favor de ingresar correctamente los datos";
         resultado.className = "bg-danger";
         return;
@@ -112,18 +113,21 @@ function calcularpromedio(event){
 
     if ((n1 > 100) || (n1 < 0)){
         console.log("Dato mal registrado p1")
+        alerta();
         resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
         resultado.className = "bg-danger";
         return;
     }
     else if ((n2 > 100) || (n2 < 0)){
         console.log("Dato mal registrado p2")
+        alerta();
         resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
         resultado.className = "bg-danger";
         return;
     }
     else if ((n3 > 100) || (n3 < 0)){
         console.log("Dato mal registrado p2")
+        alerta();
         resultado.textContent = "Error, favor de ingresar una valor entre el 0 al 100";
         resultado.className = "bg-danger";
         return;
@@ -136,10 +140,12 @@ function calcularpromedio(event){
     if (promedio >= 70){
         resultado.textContent = `Promedio = ${promediofixed} - Aprovado`;
         resultado.className = "bg-success";
+        aprovo();
     }
     else{
         resultado.textContent = `Promedio = ${promediofixed} - Reprovado`;
         resultado.className = "bg-warning text-dark";
+        reprovo();
     }
 }
 
@@ -154,7 +160,8 @@ function agregarElemento() {
 
     if (dato.trim() == ""){
         console.log("Dato vacio");
-        window.alert("Ingrese algo en el cuadro de texto") //me lo fume y si funciono la sintaxis XDXD
+        alerta();
+        window.alert("Ingrese algo en el cuadro de texto") //me fume la sintaxis y si funciono XDXD
         return;
     }
 
@@ -162,11 +169,13 @@ function agregarElemento() {
     lista.appendChild(nuevoElemto);
 
     document.getElementById("inputtext").value = "";
+    agregarelemento();
 }
 
 function limpiarElemento() {
     console.log("Vaciando lista")
     document.getElementById("listadinamica").innerHTML = "";
+    agregarelemento();
 }
 
 // cambio de estilos
@@ -177,10 +186,12 @@ function cambiarbg(){
 
     if (bg.className.trim() == "bg-light"){
         console.log("Nada que hacer");
+        alerta();
         window.alert("El color ya a sido cambiado");
         return;
     }
     else{
+        fb();
         bg.className=("bg-light");
         return;
     }
@@ -192,6 +203,7 @@ function originalbg(){
 
     if (bg.className.trim() == "bg-dark"){
         console.log("Nada que hacer");
+        alerta();
         window.alert("El color ya a sido cambiado al original");
         return;
     }
@@ -210,3 +222,56 @@ document.addEventListener('click', function playAudio(){
 
     document.removeEventListener('click', playAudio);
 }, {once:true});
+
+document.querySelectorAll('#valores').forEach(boton => { //aqui se pone el id o clase del elemento que sonara
+        boton.addEventListener('click', () => {
+            const audioClick = document.getElementById('sonido_click'); //aqui el id del audio en el html
+            audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
+            audioClick.volume = 0.3;    // Volumen del clic
+            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+        });
+    });
+
+document.querySelectorAll('#limpiar').forEach(boton => { //aqui se pone el id o clase del elemento que sonara
+        boton.addEventListener('click', () => {
+            const audioClick = document.getElementById('sonido_click2'); //aqui el id del audio en el html
+            audioClick.currentTime = 0; // Reinicia el audio para permitir clics rápidos seguidos
+            audioClick.volume = 0.3;    // Volumen del clic
+            audioClick.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+        });
+    });
+
+function aprovo(){
+    const audio = document.getElementById("aprov_sonido");
+    audio.currentTime = 0;
+    audio.volume = 0.5;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
+
+function reprovo(){
+    const audio = document.getElementById("reprov_sonido");
+    audio.currentTime = 0;
+    audio.volume = 0.5;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
+
+function fb(){
+    const audio = document.getElementById("flashbang");
+    audio.currentTime = 0;
+    audio.volume = 0.5;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
+
+function alerta(){
+    const audio = document.getElementById("alerta");
+    audio.currentTime = 0;
+    audio.volume = 0.3;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
+
+function agregarelemento(){
+    const audio = document.getElementById("nuevoelemento");
+    audio.currentTime = 0;
+    audio.volume = 0.3;
+    audio.play().catch(error => console.log("Reproducción bloqueada temporalmente"));
+}
